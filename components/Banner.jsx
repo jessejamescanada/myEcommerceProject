@@ -87,7 +87,7 @@ const Banner = ({ bannerData }) => {
                   {details}
                 </h3>
                 <Link
-                  href={'http://localhost:3000/post/nikki-smart-watch'}
+                  href={'/post/nikki-smart-watch'}
                   className=' z-20'
                 >
                   <motion.button
