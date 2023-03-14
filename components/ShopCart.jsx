@@ -43,7 +43,11 @@ function ShopCart({ products }) {
           </button>
         </div>
         <div className='flex w-full h-full  lg:justify-start items-start mb-9  '>
-          <div className='mt-8 md:flex md:flex-col md:w-auto md:h-[500px] md:flex-wrap'>
+          <div
+            className={`mt-8 md:flex md:flex-col md:w-auto md:h-[${
+              cartItems.length <= 3 ? '200px' : '500px'
+            }] md:flex-wrap`}
+          >
             {cartItems &&
               cartItems.map((item) => (
                 <div
