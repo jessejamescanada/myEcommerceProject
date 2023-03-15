@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useStateContext } from '@/app/StateContext'
 import { AiOutlineShopping } from 'react-icons/ai'
+import { BsFillMoonStarsFill } from 'react-icons/bs'
 
 function Header({ lightMode, switchDisplayMode }) {
   const { totalQuantities } = useStateContext()
@@ -12,16 +13,14 @@ function Header({ lightMode, switchDisplayMode }) {
         <div>Electronics Depot</div>
       </Link>
 
-      <div className=' flex w-[150px] justify-between'>
+      <div className=' flex w-[100px] justify-between'>
         <div className='flex items-center relative w-max cursor-pointer select-none'>
-          <span className='text-sm font-bold mr-3'>
-            {lightMode ? 'Dark' : 'Light'}
+          <span>
+            <BsFillMoonStarsFill
+              onClick={() => switchDisplayMode()}
+              className='cursor-pointer text-xl'
+            />
           </span>
-          <input
-            onClick={() => switchDisplayMode()}
-            type='checkbox'
-            className='appearance-none transition-colors cursor-pointer w-10 h-5 rounded-full focus:outline-none  bg-gray-100'
-          />
         </div>
 
         <div className='relative'>
