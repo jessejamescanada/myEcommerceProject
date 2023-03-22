@@ -32,7 +32,7 @@ function ShopCart({ products }) {
         <h1 className='font-bold text-center text-4xl mb-8 '>
           Your Shopping Cart
         </h1>
-        {cartItems.length <= 0 ? <p>Your cart is empty</p> : ''}
+
         <div className='flex flex-col items-center lg:items-end justify-end w-full'>
           <p className='font-semibold'>Total Price: ${totalPrice}</p>
           <button
@@ -42,9 +42,18 @@ function ShopCart({ products }) {
             Checkout
           </button>
         </div>
-        <div className='flex w-full h-full  lg:justify-start items-start mb-9  '>
+        {cartItems.length <= 0 ? (
+          <div className='flex mt-10 lg:h-[30vh] items-center m-auto'>
+            <p className='text-4xl '>Your cart is empty</p>
+          </div>
+        ) : (
+          ''
+        )}
+        <div className='flex w-full  lg:justify-start items-start mb-9  '>
           <div
-            className={`mt-8 md:flex md:flex-col md:w-auto md:h-[500px] md:flex-wrap`}
+            className={`${
+              cartItems.length === 0 ? 'md:h-auto' : 'md:h-[500px]'
+            } mt-8 md:flex md:flex-col md:w-auto  md:flex-wrap`}
           >
             {cartItems &&
               cartItems.map((item) => (

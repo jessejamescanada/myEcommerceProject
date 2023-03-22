@@ -16,7 +16,7 @@ const cart = async () => {
   const products = await client.fetch(productQuery)
 
   return (
-    <div className='w-full'>
+    <div className='w-full '>
       <ShopCart products={products} />
     </div>
   )
